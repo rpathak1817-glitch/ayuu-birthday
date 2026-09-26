@@ -1,167 +1,220 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Ayuu 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ayuu 🎂</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{box-sizing:border-box}
 
-    html, body {
-      margin: 0;
-      width: 100%;
-      min-height: 100%;
-    }
-
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #12051f, #35104d, #702858);
-      color: white;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    .scene {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-    }
-
-    h1 {
-      font-size: 40px;
-      color: #ffd1e5;
-      margin: 20px 0;
-    }
-
-    p {
-      font-size: 19px;
-      line-height: 1.6;
-      max-width: 350px;
-    }
-
-    .heart {
-      font-size: 65px;
-      animation: float 2s infinite ease-in-out;
-    }
-
-    button {
-      margin-top: 25px;
-      padding: 15px 32px;
-      border: none;
-      border-radius: 30px;
-      background: #ff6fae;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-.balloons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-  max-width: 330px;
+html,body{
+  margin:0;
+  width:100%;
+  min-height:100%;
 }
 
-.balloon {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  font-size: 55px;
-  cursor: pointer;
-  transition: transform 0.2s;
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#12051f,#35104d,#702858);
+  color:white;
+  font-family:Arial,sans-serif;
+  overflow:hidden;
 }
 
-.balloon:active {
-  transform: scale(1.3);
+.scene{
+  min-height:100vh;
+  padding:30px 22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.balloon.popped {
-  animation: pop 0.35s forwards;
+.hidden{display:none}
+
+h1{
+  color:#ffd1e5;
+  font-size:38px;
+  margin:18px 0;
 }
 
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-
-  60% {
-    transform: scale(1.4);
-  }
-
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
+p{
+  font-size:18px;
+  line-height:1.6;
+  max-width:350px;
 }
 
-#reasonText {
-  min-height: 55px;
-  margin-top: 25px;
-  color: #ffd1e5;
-  font-weight: bold;
-    }
-    .hidden {
-      display: none;
-    }
+button{
+  margin-top:22px;
+  padding:14px 28px;
+  border:0;
+  border-radius:30px;
+  background:#ff6fae;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+}
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
+.heart{
+  font-size:70px;
+  animation:float 2s infinite ease-in-out;
+}
 
-      50% {
-        transform: translateY(-15px);
-      }
-    }
-  </style>
+.cake{
+  font-size:90px;
+  animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+}
+
+/* balloons */
+
+.balloons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  max-width:330px;
+  margin-top:20px;
+}
+
+.balloon{
+  margin:0;
+  padding:0;
+  background:transparent;
+  font-size:52px;
+  transition:.2s;
+}
+
+.balloon.popped{
+  animation:pop .35s forwards;
+}
+
+@keyframes pop{
+  0%{transform:scale(1)}
+  60%{transform:scale(1.4)}
+  100%{transform:scale(0);opacity:0}
+}
+
+#reasonText{
+  min-height:60px;
+  color:#ffd1e5;
+  font-weight:bold;
+}
+
+/* memories */
+
+.memory{
+  width:280px;
+  padding:15px;
+  background:white;
+  color:#35104d;
+  border-radius:15px;
+  transform:rotate(-2deg);
+  box-shadow:0 10px 30px #0005;
+  animation:appear .8s ease;
+}
+
+.memory-box{
+  height:230px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#ffd1e5,#b9a0ff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:70px;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(30px) rotate(-5deg)}
+  to{opacity:1;transform:translateY(0) rotate(-2deg)}
+}
+
+/* letter */
+
+.letter{
+  max-width:340px;
+  padding:25px;
+  border-radius:20px;
+  background:#ffffff18;
+  border:1px solid #ffffff30;
+  line-height:1.7;
+}
+
+/* reveal */
+
+.reveal{
+  width:280px;
+  min-height:130px;
+  border-radius:18px;
+  background:#ff6fae;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  font-size:19px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 10px 30px #0005;
+}
+
+.final-heart{
+  font-size:80px;
+  animation:beat 1s infinite;
+}
+
+@keyframes beat{
+  50%{transform:scale(1.2)}
+}
+
+.sparkles{
+  font-size:28px;
+  letter-spacing:8px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="scene" id="opening">
+<!-- OPENING -->
 
-    <div class="heart">💗</div>
+<div class="scene" id="opening">
+  <div class="heart">💗</div>
 
-    <h1>Hey Ayuu... 🌙</h1>
+  <h1>Hey Ayuu... 🌙</h1>
 
-    <p>
-      I've made something special for you...<br>
-      so stay till the end. ✨
-    </p>
+  <p>
+    I've made something special for you...<br>
+    So stay till the end. ✨
+  </p>
 
-    <button onclick="startJourney()">
-      Start ✨
-    </button>
-
-  </div>
+  <button onclick="show('wish')">Start ✨</button>
+</div>
 
 
-  <div class="scene hidden" id="wish">
+<!-- WISH -->
 
-    <div style="font-size:90px;">🎂</div>
+<div class="scene hidden" id="wish">
+  <div class="cake">🎂</div>
 
-    <h1>Make a Wish ✨</h1>
+  <h1>Make a Wish ✨</h1>
 
-    <p>
-      Close your eyes for a second...<br>
-      and make your birthday wish. 🌙
-    </p>
+  <p>
+    Close your eyes for a second...<br>
+    and make your birthday wish. 🌙
+  </p>
 
-    <button onclick="nextStep()">
-      I Made My Wish 🕯️
-    </button>
+  <button onclick="show('reasons')">
+    I Made My Wish 🕯️
+  </button>
+</div>
 
-  </div>
 
+<!-- REASONS -->
 
 <div class="scene hidden" id="reasons">
 
@@ -174,53 +227,111 @@
 
   <div class="balloons">
 
-    <button class="balloon" onclick="popBalloon(this, 0)">🎈</button>
-
-    <button class="balloon" onclick="popBalloon(this, 1)">🎈</button>
-
-    <button class="balloon" onclick="popBalloon(this, 2)">🎈</button>
-
-    <button class="balloon" onclick="popBalloon(this, 3)">🎈</button>
-
-    <button class="balloon" onclick="popBalloon(this, 4)">🎈</button>
+    <button class="balloon" onclick="pop(this,0)">🎈</button>
+    <button class="balloon" onclick="pop(this,1)">🎈</button>
+    <button class="balloon" onclick="pop(this,2)">🎈</button>
+    <button class="balloon" onclick="pop(this,3)">🎈</button>
+    <button class="balloon" onclick="pop(this,4)">🎈</button>
 
   </div>
 
   <p id="reasonText"></p>
 
+  <button id="memoryButton" class="hidden" onclick="show('memories')">
+    Our Memories 📸
+  </button>
+
 </div>
 
 
-  <script>
+<!-- MEMORIES -->
 
-    function startJourney() {
-  document.getElementById("opening").classList.add("hidden");
-  document.getElementById("wish").classList.remove("hidden");
-}
+<div class="scene hidden" id="memories">
 
-function nextStep() {
-  document.getElementById("wish").classList.add("hidden");
-  document.getElementById("reasons").classList.remove("hidden");
-}
+  <h1>Our Little Memories 📸</h1>
 
-let reasons = [
-  "Your smile can make an ordinary day feel better. 🌸",
-  "You have your own little way of making moments memorable. ✨",
-  "I love you because you are YOU . 🎂",
-  "I love you for you existence. 💗",
-  "Life with you feels nothing less than a fairytale.✨️"
-];
+  <p>
+    Some moments are too special to forget. ✨
+  </p>
 
-function popBalloon(balloon, number) {
-  balloon.classList.add("popped");
+  <div class="memory">
 
-  setTimeout(function() {
-    document.getElementById("reasonText").innerHTML =
-      reasons[number];
-  }, 250);
-}
+    <div class="memory-box">
+      📸
+    </div>
 
-  </script>
+    <p>
+      A place for one of our favourite memories. 💗
+    </p>
 
-</body>
-</html>
+  </div>
+
+  <button onclick="show('letter')">
+    Next 💌
+  </button>
+
+</div>
+
+
+<!-- LETTER -->
+
+<div class="scene hidden" id="letter">
+
+  <div class="sparkles">✨ ✨ ✨</div>
+
+  <h1>A Little Letter For You 💌</h1>
+
+  <div class="letter">
+
+    <p>
+      Happy Birthday, Ayuu! 🎂
+    </p>
+
+    <p>
+      I hope this new year of your life brings
+      you countless reasons to smile,
+      beautiful memories and everything
+      your heart wishes for. 💗
+    </p>
+
+    <p>
+      Thank you for being such a special part
+      of my world. ✨
+    </p>
+
+  </div>
+
+  <button onclick="show('reveal')">
+    One Last Surprise ✨
+  </button>
+
+</div>
+
+
+<!-- REVEAL -->
+
+<div class="scene hidden" id="reveal">
+
+  <h1>Tap to Reveal 💗</h1>
+
+  <div class="reveal" onclick="revealMessage(this)">
+    ✨ Tap me ✨
+  </div>
+
+  <button id="finalButton" class="hidden" onclick="show('final')">
+    Continue 🎉
+  </button>
+
+</div>
+
+
+<!-- FINAL -->
+
+<div class="scene hidden" id="final">
+
+  <div class="final-heart">💗</div>
+
+  <h1>Happy Birthday Ayuu! 🎂</h1>
+
+  <p>
+   
