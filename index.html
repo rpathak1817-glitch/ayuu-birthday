@@ -61,7 +61,54 @@
       font-weight: bold;
       cursor: pointer;
     }
+.balloons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  max-width: 330px;
+}
 
+.balloon {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 55px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.balloon:active {
+  transform: scale(1.3);
+}
+
+.balloon.popped {
+  animation: pop 0.35s forwards;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+#reasonText {
+  min-height: 55px;
+  margin-top: 25px;
+  color: #ffd1e5;
+  font-weight: bold;
+    }
     .hidden {
       display: none;
     }
@@ -116,54 +163,62 @@
   </div>
 
 
-  <div class="scene hidden" id="reasons">
+<div class="scene hidden" id="reasons">
 
-    <div style="font-size:70px;">🎈🎈🎈</div>
+  <h1>Reasons Why You're Loved 💗</h1>
 
-    <h1>One Little Secret...</h1>
+  <p>
+    There are so many little reasons...<br>
+    Pop the balloons to discover them. 🎈
+  </p>
 
-    <p id="reasonText">
-      There are so many little things that make you special. 💗
-    </p>
+  <div class="balloons">
 
-    <button onclick="showReason()">
-      Tap for a reason 💕
-    </button>
+    <button class="balloon" onclick="popBalloon(this, 0)">🎈</button>
+
+    <button class="balloon" onclick="popBalloon(this, 1)">🎈</button>
+
+    <button class="balloon" onclick="popBalloon(this, 2)">🎈</button>
+
+    <button class="balloon" onclick="popBalloon(this, 3)">🎈</button>
+
+    <button class="balloon" onclick="popBalloon(this, 4)">🎈</button>
 
   </div>
+
+  <p id="reasonText"></p>
+
+</div>
 
 
   <script>
 
     function startJourney() {
-      document.getElementById("opening").classList.add("hidden");
-      document.getElementById("wish").classList.remove("hidden");
-    }
+  document.getElementById("opening").classList.add("hidden");
+  document.getElementById("wish").classList.remove("hidden");
+}
 
-    function nextStep() {
-      document.getElementById("wish").classList.add("hidden");
-      document.getElementById("reasons").classList.remove("hidden");
-    }
+function nextStep() {
+  document.getElementById("wish").classList.add("hidden");
+  document.getElementById("reasons").classList.remove("hidden");
+}
 
-    let reasons = [
-      "Your smile can make an ordinary day feel better. 🌸",
-      "You have your own little way of making moments memorable. ✨",
-      "You deserve a birthday filled with happiness. 🎂",
-      "You are genuinely important to the people who care about you. 💗",
-      "And today is all about celebrating YOU. 🎉"
-    ];
+let reasons = [
+  "Your smile can make an ordinary day feel better. 🌸",
+  "You have your own little way of making moments memorable. ✨",
+  "I love you because you are YOU . 🎂",
+  "I love you for you existence. 💗",
+  "Life with you feels nothing less than a fairytale.✨️"
+];
 
-    let index = 0;
+function popBalloon(balloon, number) {
+  balloon.classList.add("popped");
 
-    function showReason() {
-      document.getElementById("reasonText").innerHTML = reasons[index];
-
-      index++;
-
-      if (index >= reasons.length) {
-        index = 0;
-      }
-    }
+  setTimeout(function() {
+    document.getElementById("reasonText").innerHTML =
+      reasons[number];
+  }, 250);
+}
 
   </script>
 
