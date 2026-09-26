@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Ayuu 🎂</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #12051f, #35104d, #702858);
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .scene {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #ffd1e5;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 350px;
+    }
+
+    .heart {
+      font-size: 65px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 15px 32px;
+      border: none;
+      border-radius: 30px;
+      background: #ff6fae;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="scene" id="opening">
+
+    <div class="heart">💗</div>
+
+    <h1>Hey Ayuu... 🌙</h1>
+
+    <p>
+      I've made something special for you...<br>
+      so stay till the end. ✨
+    </p>
+
+    <button onclick="startJourney()">
+      Start ✨
+    </button>
+
+  </div>
+
+
+  <div class="scene hidden" id="wish">
+
+    <div style="font-size:90px;">🎂</div>
+
+    <h1>Make a Wish ✨</h1>
+
+    <p>
+      Close your eyes for a second...<br>
+      and make your birthday wish. 🌙
+    </p>
+
+    <button onclick="nextStep()">
+      I Made My Wish 🕯️
+    </button>
+
+  </div>
+
+
+  <div class="scene hidden" id="reasons">
+
+    <div style="font-size:70px;">🎈🎈🎈</div>
+
+    <h1>One Little Secret...</h1>
+
+    <p id="reasonText">
+      There are so many little things that make you special. 💗
+    </p>
+
+    <button onclick="showReason()">
+      Tap for a reason 💕
+    </button>
+
+  </div>
+
+
+  <script>
+
+    function startJourney() {
+      document.getElementById("opening").classList.add("hidden");
+      document.getElementById("wish").classList.remove("hidden");
+    }
+
+    function nextStep() {
+      document.getElementById("wish").classList.add("hidden");
+      document.getElementById("reasons").classList.remove("hidden");
+    }
+
+    let reasons = [
+      "Your smile can make an ordinary day feel better. 🌸",
+      "You have your own little way of making moments memorable. ✨",
+      "You deserve a birthday filled with happiness. 🎂",
+      "You are genuinely important to the people who care about you. 💗",
+      "And today is all about celebrating YOU. 🎉"
+    ];
+
+    let index = 0;
+
+    function showReason() {
+      document.getElementById("reasonText").innerHTML = reasons[index];
+
+      index++;
+
+      if (index >= reasons.length) {
+        index = 0;
+      }
+    }
+
+  </script>
+
+</body>
+</html>
